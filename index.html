@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Quiz</title>
+
+	<meta name="viewport" content="width=device-width">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+
+body {
+
+	width:100%;
+margin:0;
+min-width: 350px;
+}
+
+html {
+
+	min-width: 350px;
+}
+
+body {
+
+
+	
+   
+background-image: url("images/wave.svg");
+ background-repeat: no-repeat;
+  
+background-color:#27293f;
+background-position-x:center ;
+
+background-size: 100%;
+}
+
+.logo {
+
+position:absolute;
+top:50px;
+left:50%;
+transform: translate(-50%, -50%);
+}
+
+.filler {
+
+	background-color:#353755;
+	height: 0px;
+}
+
+.question {
+
+
+width: 100%;
+height: 40px;
+
+font-family: Roboto;
+font-style:normal;
+font-weight: lighter;
+font-size: 34px;
+line-height: 40px;
+text-align: center;
+color: #FFFFFF;
+
+}
+
+.quiz {
+
+
+	margin-top: 250px;
+}
+
+
+.slidecontainer {
+
+	margin-top: 80px;
+   width:345px;
+
+}
+
+
+
+
+.slider, .slider2 {
+  -webkit-appearance: none;
+  width: 340px;
+  height: 4px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+background: linear-gradient(90deg, #0FFFFF 2.87%, #FD459D 100%);
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+}
+
+.slider1 {
+
+	position:relative;
+}
+
+output {
+
+position:absolute;
+margin-left: -3%;
+margin-top: ;
+left:50%;
+top:35px;
+width: 9px;
+height: 19px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 19px;
+
+color: rgba(255, 255, 255, 0.7);
+
+
+}
+
+
+output#volume2 {
+
+width: 50px;
+margin-left: -20px;
+margin-top: -10px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 3px;
+  height: 21px;
+  background: #0FFFFF;
+  cursor: pointer;
+position: relative;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider2:hover {
+  opacity: 1;
+}
+
+.slider2::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 3px;
+  height: 21px;
+  background: #0FFFFF;
+  cursor: pointer;
+position: relative;
+}
+
+.slider2::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.rectangle {
+
+position: absolute;
+width:340px;
+height: 10px;
+background: linear-gradient(90deg, rgba(15, 255, 255, 0.11) 1.53%, rgba(253, 69, 157, 0.11) 95.86%);
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+margin-top: -6px;
+left:50%;
+transform: translate(-50%, -50%);
+}
+
+
+.dots {
+
+margin-top: -10px;
+
+
+}
+
+.leftcircle {
+float:left;
+margin-top: -36px;
+margin-left:-33px;
+
+}
+
+
+.rightcircle {
+float:right;
+margin-top: -36px;
+margin-right:-33px;
+}
+
+
+.fadetext {
+
+margin-bottom: 45px;
+width: 60px;
+height: 26px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 22px;
+line-height: 26px;
+color: rgba(255, 255, 255, 0.5);
+
+
+
+}
+
+.continue {
+width:218px;
+height:53px;
+border-style: none;
+outline-style: none;
+background: linear-gradient(108.22deg, #60EFDB -20.7%, rgba(99, 188, 201, 0.85) 69.95%);
+border-radius: 35px;
+font-family: Open Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 25px;
+color: #FFF9F9;
+margin-top: 100px;
+margin-bottom: 100px;
+cursor: pointer;
+transition: all 0.5s ease;
+}
+
+.continue:hover {
+
+
+
+background: #1D645A;
+
+
+
+}
+
+.progressbar {
+
+padding-bottom: 30px;
+
+}
+
+.lb {
+
+position: relative;
+
+}
+
+@media screen and (min-width: 1300px) { body { background-size: 100%;} }
+
+@media screen and (max-width: 1100px) { body { background-position-y:3%; } .filler { height:30px; width:100%;} }
+
+@media screen and (max-width: 550px) {
+
+
+#pbar { width: 90%; }
+
+
+.leftcircle {
+float:left;
+margin-top: -36px;
+margin-left:0px;
+
+}
+
+
+.rightcircle {
+float:right;
+margin-top: -36px;
+margin-right:0px;
+}
+
+.rectangle, .slider, .slider2 {
+
+width: 274px;
+
+
+}
+
+.logo {
+
+
+	top:33px;
+}
+
+
+output {
+
+  margin-left: -8%;
+  margin-right: ;
+}
+
+
+}
+
+
+
+</style>	
+
+<script>
+
+function outputUpdate2(vol) {
+  var output2 = document.querySelector("#volume2");
+	output2.value = vol + " lb";
+  output2.style.left = vol + '%';
+}
+
+function outputUpdate(vol) {
+  var output = document.querySelector("#volume");
+  output.value = vol;
+  output.style.left = vol + '%';
+}
+
+
+</script>	
+
+
+
+
+
+<body>
+
+<div class="filler"></div>
+
+
+
+
+
+
+<center>
+
+<div class="logo"><img src="images/logo.png"></div>
+
+
+
+
+<div class="quiz">
+
+
+
+
+<div class="question">What is your height and weight?</div>
+
+
+
+
+<div class="slidecontainer">
+
+<div class="fadetext">height</div>
+  
+
+<div class="slider1">
+
+ <input class="slider "type="range" min="1" max="100" value="50" step="1" oninput="outputUpdate(value)">
+<output  id="volume">50</output>
+
+</div>
+
+
+<div class="rectangle"></div>
+<div class="dots"><img src="images/dots.svg"></div>
+<div class="leftcircle"><img src="images/leftcircle.svg"></div>
+<div class="rightcircle"><img src="images/rightcircle.svg"></div>
+
+
+</div>
+
+
+<div class="slidecontainer">
+
+<div class="fadetext">weight</div>
+  
+<div class="slider1">
+
+ <input class="slider2" type="range" min="1" max="100" value="50" step="1" oninput="outputUpdate2(value)">
+<div class="lb"><output  id="volume2">50 lb</output></div>
+
+</div>
+<div class="rectangle"></div>
+<div class="dots"><img src="images/dots.svg"></div>
+<div class="leftcircle"><img src="images/leftcircle.svg"></div>
+<div class="rightcircle"><img src="images/rightcircle.svg"></div>
+
+
+</div>
+
+
+<button class="continue">Continue</button>
+
+
+<div class="progressbar"><img id="pbar" src="images/progressbar.svg"></div>
+
+</div>
+
+
+
+
+
+</center>
+
+
+
+
+
+
+
+</body>
+</html>
